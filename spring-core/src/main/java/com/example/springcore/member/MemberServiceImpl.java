@@ -1,5 +1,8 @@
 package com.example.springcore.member;
 
+import lombok.Getter;
+
+@Getter
 public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;

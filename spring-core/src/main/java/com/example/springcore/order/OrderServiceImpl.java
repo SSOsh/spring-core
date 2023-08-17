@@ -6,7 +6,9 @@ import com.example.springcore.discount.RateDiscountPolicy;
 import com.example.springcore.member.Member;
 import com.example.springcore.member.MemberRepository;
 import com.example.springcore.member.MemoryMemberRepository;
+import lombok.Getter;
 
+@Getter
 public class OrderServiceImpl implements OrderService{
     private  final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
