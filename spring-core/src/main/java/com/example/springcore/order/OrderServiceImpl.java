@@ -7,12 +7,16 @@ import com.example.springcore.member.Member;
 import com.example.springcore.member.MemberRepository;
 import com.example.springcore.member.MemoryMemberRepository;
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 @Getter
 public class OrderServiceImpl implements OrderService{
-    private  final MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
