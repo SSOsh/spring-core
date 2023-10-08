@@ -1,5 +1,7 @@
 package com.example.springcore.lifecycle;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
@@ -43,5 +45,19 @@ public class NetworkClient
     @Override
     public void destroy() throws Exception {
         disconnect();
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("init");
+        connect();
+        call("초기화");
+    }
+
+    @PreDestroy
+    public void close() {
+        System.out.println("close");
+        disconnect();
+        call("닫기");
     }
 }
