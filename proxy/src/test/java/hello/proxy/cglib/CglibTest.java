@@ -8,6 +8,9 @@ import org.springframework.cglib.proxy.Enhancer;
 
 @Slf4j
 public class CglibTest {
+    //interface 있네? -> jdk proxy
+    // 그냥 구체클래스네? -> cglib
+    // 특정 조건 맞을때만 프록시 부가기능 적용 -> Pointcut
     @Test
     void cglib() {
         ConcreteService target = new ConcreteService();
